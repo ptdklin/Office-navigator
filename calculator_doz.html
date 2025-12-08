@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендуемые суточные дозы препаратов для лечения туберкулеза</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .table-wrapper {
+            flex: 1;
+            overflow: auto;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background: white;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            font-weight: 600;
+            padding: 16px 12px;
+            text-align: left;
+            border: none;
+            position: relative;
+        }
+
+        th::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .sub-header th {
+            background: linear-gradient(135deg, #81ecec 0%, #00cec9 100%);
+            font-size: 13px;
+        }
+
+        .weight-header {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e1e8ed;
+            vertical-align: top;
+            background: rgba(255,255,255,0.8);
+        }
+
+        tbody tr:nth-child(even) td {
+            background: rgba(245, 247, 250, 0.8);
+        }
+
+        tbody tr:hover td {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            transition: all 0.2s ease;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            border-top: 1px solid #e1e8ed;
+            padding: 20px 30px;
+            flex-shrink: 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .table-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            border-radius: 4px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #0984e3 0%, #074a8f 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Рекомендуемые суточные дозы лекарственных препаратов для лечения туберкулеза у взрослых</h1>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Препарат</th>
+                        <th rowspan="2">Средняя терапевти-<br>ческая доза</th>
+                        <th rowspan="2">Максимальная<br>суточная доза</th>
+                        <th colspan="3" class="weight-header">Суточная доза в зависимости от массы тела</th>
+                    </tr>
+                    <tr class="sub-header">
+                        <th>&lt; 50 кг</th>
+                        <th>50–69 кг</th>
+                        <th>&gt; 70 кг</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Изониазид (H)</td>
+                        <td>5–10 мг/кг</td>
+                        <td>600 мг</td>
+                        <td>300 мг</td>
+                        <td>450–600 мг</td>
+                        <td>600 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Рифампицин (R)</td>
+                        <td>10 мг/кг</td>
+                        <td>600 мг</td>
+                        <td>450 мг</td>
+                        <td>600 мг</td>
+                        <td>600 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Рифабутин (Rb)</td>
+                        <td>5 мг/кг</td>
+                        <td>300 мг</td>
+                        <td>300 мг</td>
+                        <td>300 мг</td>
+                        <td>300 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Рифапентин (Rpt) для ФП в длительном режиме</td>
+                        <td>10 мг/кг 2–3 раза в неделю</td>
+                        <td>600 мг 3 раза в неделю</td>
+                        <td>600 мг 2–3 раза в неделю</td>
+                        <td>600 мг 2–3 раза в неделю</td>
+                        <td>600 мг 2–3 раза в неделю</td>
+                    </tr>
+                    <tr>
+                        <td>Рифапентин (Rpt) в коротком режиме</td>
+                        <td>20 мг/кг Ежедневно (короткий режим ЛЧТ)</td>
+                        <td>1200 мг Ежедневно (короткий режим ЛЧТ)</td>
+                        <td>1200 мг Ежедневно (короткий режим ЛЧТ)</td>
+                        <td>1200 мг Ежедневно (короткий режим ЛЧТ)</td>
+                        <td>1200 мг Ежедневно (короткий режим ЛЧТ)</td>
+                    </tr>
+                    <tr>
+                        <td>Пиразинамид (Z)</td>
+                        <td>20–30 мг/кг</td>
+                        <td>2500 мг</td>
+                        <td>1500 мг</td>
+                        <td>1500 мг</td>
+                        <td>2000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Стрептомицин (S)</td>
+                        <td>12–18 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>750–1000 мг</td>
+                        <td>1000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Этамбутол (E)</td>
+                        <td>15–25 мг/кг</td>
+                        <td>2000 мг</td>
+                        <td>1200 мг</td>
+                        <td>1600 мг</td>
+                        <td>2000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Левофлоксацин (Lfx)</td>
+                        <td>10–15 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>750–1000 мг</td>
+                        <td>750 мг (1000 мг при пре-ШЛУ/ШЛУ)</td>
+                        <td>1000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Моксифлоксацин (Mfx)</td>
+                        <td>400 мг<br>800 мг</td>
+                        <td>800 мг</td>
+                        <td>400 мг</td>
+                        <td>400 мг (800 мг при пре-ШЛУ/ ШЛУ)</td>
+                        <td>400 мг (800 мг при пре-ШЛУ/ ШЛУ)</td>
+                    </tr>
+                    <tr>
+                        <td>Спарфлоксацин (Sfx)</td>
+                        <td>200 мг</td>
+                        <td>400 мг</td>
+                        <td colspan="3">400 мг в первый день, затем по 200 мг в сутки</td>
+                    </tr>
+                    <tr>
+                        <td>Бедаквилин (Bq)</td>
+                        <td colspan="5">4 таблетки (400 мг) ежедневно 2 недели, затем по 2 таблетки (200 мг) 3 раза в неделю 22 недели (с 3 недели перерыв между приемом препарата не менее 48 часов)</td>
+                    </tr>
+                    <tr>
+                        <td>Линезолид (Lzd)</td>
+                        <td>600 мг</td>
+                        <td>1200 мг</td>
+                        <td>300–600 мг</td>
+                        <td>600 мг</td>
+                        <td>600 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Клофазимин (Cfz)</td>
+                        <td>100 мг</td>
+                        <td>100 мг</td>
+                        <td>100 мг</td>
+                        <td>100 мг</td>
+                        <td>100 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Циклосерин (Cs)</td>
+                        <td>10–15 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>500–750 мг</td>
+                        <td>750 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Теризидон (Trd)</td>
+                        <td>10–15 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>500–750 мг</td>
+                        <td>750 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Деламанид (Dim)</td>
+                        <td>200 мг</td>
+                        <td>200 мг</td>
+                        <td colspan="3">100 мг 2 раза в день</td>
+                    </tr>
+                    <tr>
+                        <td>Этионамид (Eto)</td>
+                        <td>15–20 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500–750 мг</td>
+                        <td>750 мг</td>
+                        <td>750 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Протионамид (Pto)</td>
+                        <td>15–20 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500–750 мг</td>
+                        <td>750 мг</td>
+                        <td>750 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Меропенем (Мp) + клавулановая кислота (Amx/Civ)</td>
+                        <td colspan="5">1000 мг 3 раза в день, в/в капельно + 500/125 мг 3 раза в день перед каждым введением Mp</td>
+                    </tr>
+                    <tr>
+                        <td>Имипенем- циластатин (Imp) + клавулановая кислота (Amx/Civ)</td>
+                        <td colspan="5">1000 мг + 1000 мг 2 раза в день, в/в капельно + 500/125 мг 2 раза в день перед каждым введением Imp</td>
+                    </tr>
+                    <tr>
+                        <td>Амикацин (Am)</td>
+                        <td>15–20 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>750–1000 мг</td>
+                        <td>1000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Канамицин (Km)</td>
+                        <td>15–20 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>750–1000 мг</td>
+                        <td>1000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Капреомицин (Cm)</td>
+                        <td>15–20 мг/кг</td>
+                        <td>1000 мг</td>
+                        <td>500 мг</td>
+                        <td>750–1000 мг</td>
+                        <td>1000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Аминосалициловая кислота (PAS)</td>
+                        <td>8000 мг</td>
+                        <td>12000 мг</td>
+                        <td>8000 мг</td>
+                        <td>8000 мг</td>
+                        <td>8000 мг</td>
+                    </tr>
+                    <tr>
+                        <td>Тиоурендомино- метилпиридиния перхлорат (Tpp)</td>
+                        <td>9,5–12,5 мг/кг</td>
+                        <td>1200 мг</td>
+                        <td>400 мг</td>
+                        <td>400–600 мг</td>
+                        <td>600 мг</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <div class="warning">
+                ⚠️ Окончательное решение о дозе препарата должно быть согласовано с инструкцией по медицинскому применению лекарственного препарата
+            </div>
+        </div>
+    </div>
+</body>
+</html>
