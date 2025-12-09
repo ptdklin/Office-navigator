@@ -14,13 +14,14 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
+        /* ОБНОВЛЕННАЯ ЦВЕТОВАЯ ПАЛИТРА */
         :root {
-            --primary: #2563eb;
-            --primary-light: #eff6ff;
-            --primary-dark: #1e40af;
-            --primary-very-light: #f8faff;
+            --primary: #4B0082; /* Глубокий Фиолетовый / Индиго */
+            --primary-light: #f0f8ff; /* Очень светлый фон */
+            --primary-dark: #370066; 
+            --primary-very-light: #f3f8ff;
             --secondary: #64748b;
-            --accent: #06b6d4;
+            --accent: #00BCD4; /* Яркий Бирюзовый */
             --success: #10b981;
             --warning: #f59e0b;
             --error: #ef4444;
@@ -42,19 +43,21 @@
             min-height: 100vh;
         }
         
-        /* ИЗМЕНЕНО: Используем Flexbox для горизонтального выравнивания (логотип + текст) */
+        /* ШАПКА: Расположение Лого + Текст и Смещение ВПРАВО */
         .content-header {
             background: var(--surface);
             padding: 35px 40px;
+            padding-left: 60px; /* Смещение всей шапки вправо */
             border-bottom: 1px solid var(--border);
             box-shadow: var(--shadow);
-            text-align: left; /* Выравнивание всего текста внутри по левому краю */
+            text-align: left;
             position: relative;
-            display: flex; /* Активируем Flexbox */
-            align-items: center; /* Центрируем содержимое по вертикали */
-            gap: 20px; /* Расстояние между логотипом и текстом */
+            display: flex;
+            align-items: center;
+            gap: 30px; /* Увеличиваем расстояние между лого и текстом */
         }
 
+        /* ГРАДИЕНТ НАД ШАПКОЙ: Обновлен на сине-фиолетово-бирюзовый */
         .content-header::before {
             content: "";
             position: absolute;
@@ -62,51 +65,66 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--success));
+            background: linear-gradient(90deg, var(--primary), #1E90FF, var(--accent));
         }
 
-        /* НОВЫЙ СТИЛЬ ДЛЯ ЛОГОТИПА В ШАПКЕ */
+        /* ЛОГОТИП: Увеличен в 2 раза */
         .header-logo {
-            width: 90px; 
-            height: 90px;
-            margin: 0; /* Убираем центрирование */
-            flex-shrink: 0; /* Не даем логотипу сжиматься */
+            width: 180px; 
+            height: 180px;
+            margin: 0;
+            flex-shrink: 0;
             display: block;
             object-fit: contain;
             position: relative; 
             z-index: 2;
         }
 
-        /* Контейнер для выравнивания текстовых элементов по левому краю рядом с логотипом */
         .header-text-container {
-            flex-grow: 1; /* Позволяем блоку с текстом занимать оставшееся место */
+            flex-grow: 1;
             text-align: left;
         }
         
         .institution-main {
             color: var(--text-secondary);
             font-size: 1.3rem;
-            margin-bottom: 4px; /* Уменьшаем отступ для более компактного вида */
+            margin-bottom: 4px;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
         
+        /* ЗАГОЛОВОК: Увеличен размер и сброшены градиентные стили для частичной окраски */
         .page-title {
-            font-size: 2.8rem;
+            font-size: 3.5rem; /* Увеличенный размер */
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: none; 
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            color: var(--text-primary); /* Возвращаем стандартный цвет для "Навигатор врача" */
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+
+        /* Стилизация части "Навигатор врача" */
+        .title-blue {
+            color: var(--primary); /* Синий/Фиолетовый цвет значка */
+        }
+
+        /* Стилизация части "фтизиатра" (переходный/градиентный цвет) */
+        .title-gradient {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%); /* Бирюзовый -> Фиолетовый */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 6px; /* Уменьшаем отступ */
         }
         
         .page-description {
             color: var(--text-secondary);
             font-size: 1.1rem;
             font-weight: 400;
-            max-width: none; /* Убираем ограничение ширины, которое было для центрирования */
-            margin: 0; /* Убираем центрирование */
+            max-width: none;
+            margin: 0;
             line-height: 1.5;
             text-align: left;
         }
@@ -138,6 +156,7 @@
             flex-direction: column;
         }
 
+        /* ВЕРХНЯЯ ЧЕРТОЧКА КАРТОЧКИ: Обновлен на сине-фиолетово-бирюзовый */
         .card::before {
             content: "";
             position: absolute;
@@ -175,6 +194,7 @@
             transform: scale(1.05);
         }
         
+        /* ЦВЕТА БЛОКОВ (Оставлены как есть, согласно пожеланию) */
         .card-1 {
             --block-color: #2563eb;
             --block-color-light: #eff6ff;
@@ -376,29 +396,29 @@
             }
         }
         
+        /* АДАПТИВНОСТЬ: Переход к вертикальному расположению на мобильных устройствах */
         @media (max-width: 768px) {
             .content-header {
                 padding: 25px 20px;
-                flex-direction: column; /* На маленьких экранах возвращаем вертикальное расположение */
-                align-items: flex-start; /* Выравнивание по левому краю */
+                padding-left: 20px; /* Убираем смещение вправо на маленьких экранах */
+                flex-direction: column;
+                align-items: flex-start;
                 text-align: left;
+                gap: 15px;
             }
             .header-logo {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 10px;
+                width: 100px; /* Уменьшенный размер на мобильных */
+                height: 100px;
             }
             .header-text-container {
-                /* На маленьких экранах текст занимает всю ширину */
                 width: 100%; 
+            }
+            .page-title {
+                font-size: 2.5rem;
             }
             
             .content-area {
                 padding: 25px;
-            }
-            
-            .page-title {
-                font-size: 2.2rem;
             }
             
             .card {
@@ -433,8 +453,8 @@
                 grid-template-columns: 1fr;
             }
             .header-logo {
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -446,7 +466,9 @@
             
             <div class="header-text-container">
                 <div class="institution-main">ГБУЗ МО МОКПТД</div>
-                <h1 class="page-title">Навигатор врача-фтизиатра</h1>
+                <h1 class="page-title">
+                    <span class="title-blue">Навигатор врача</span>-<span class="title-gradient">фтизиатра</span>
+                </h1>
                 <p class="page-description">Система доступа к профессиональным ресурсам</p>
                 <p class="page-description" style="margin-top: 20px; font-size: 1.8rem; font-weight: 700; color: #dc2626; text-align: left; line-height: 1.3;"></p>
             </div>
@@ -760,30 +782,30 @@
         </a>
         
         <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">Контрольные листы</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="medical_record_guidelines.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">→</div>
-                    <div class="link-text">Порядок ведения и оформления медицинской карты</div>
-                </div>
-                <div class="dropdown-meta">Письмо ГБУЗ МО «МОКПТД» от 29.07.2025 № 04-594/25</div>
-            </a>
+                            <div class="link-content">
+                                <div class="link-icon">⌄</div>
+                                <div class="link-text">Контрольные листы</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="medical_record_guidelines.html" class="dropdown-link">
+                                <div class="link-content">
+                                    <div class="link-icon">→</div>
+                                    <div class="link-text">Порядок ведения и оформления медицинской карты</div>
+                                </div>
+                                <div class="dropdown-meta">Письмо ГБУЗ МО «МОКПТД» от 29.07.2025 № 04-594/25</div>
+                            </a>
                        
-            <a href="checklist_tb_offices.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">→</div>
-                    <div class="link-text">Организация противотуберкулезной помощи</div>
+                            <a href="checklist_tb_offices.html" class="dropdown-link">
+                                <div class="link-content">
+                                    <div class="link-icon">→</div>
+                                    <div class="link-text">Организация противотуберкулезной помощи</div>
+                                </div>
+                                <div class="dropdown-meta">Для тубкабинетов</div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="dropdown-meta">Для тубкабинетов</div>
-            </a>
-        </div>
-    </div>
-</div>
                 
                 <div class="card card-7" id="educational-resources">
                     <div class="card-header">
