@@ -62,12 +62,12 @@
         }
         
         .institution-main {
-    color: var(--text-secondary);
-    font-size: 1.2rem; /* Увеличил размер */
-    margin-bottom: 8px;
-    font-weight: 700; /* Сделал жирнее */
-    letter-spacing: 0.5px;
-}
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
         
         .page-title {
             font-size: 2.8rem;
@@ -327,30 +327,26 @@
         
         /* Footer */
         .footer {
-    text-align: center;
-    padding: 30px; /* Можно оставить 35px, но я уменьшил для компактности */
-    color: var(--text-secondary);
-    background: var(--surface);
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    margin-top: 35px;
-    line-height: 1.8; /* Добавил для лучшего межстрочного расстояния */
-}
-
-.footer p {
-    margin-bottom: 6px; /* Уменьшил отступы между строками */
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.year {
-    color: var(--primary);
-    font-weight: 800; /* Ещё жирнее */
-    font-size: 1.3rem; /* Немного больше */
-    display: inline-block;
-    margin-top: 8px;
-}
+            text-align: center;
+            padding: 35px;
+            color: var(--text-secondary);
+            background: var(--surface);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            margin-top: 35px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .year {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
         
         /* Responsive */
         @media (max-width: 1024px) {
@@ -410,7 +406,7 @@
     <!-- Main Content -->
     <main class="main-content" id="main-content">
         <header class="content-header">
-    <div class="institution-main">ГБУЗ МО МОКПТД</div>
+    <div class="institution-main">ГБУЗ МО МОКПТД филиал Клинский</div>
     <h1 class="page-title">Навигатор врача-фтизиатра</h1>
     <p class="page-description">Система доступа к профессиональным ресурсам</p>
     <p class="page-description" style="margin-top: 20px; font-size: 1.8rem; font-weight: 700; color: #dc2626; text-align: center; line-height: 1.3;">
@@ -474,39 +470,31 @@
 </a>
                         </div>
 
-                       
-                        <a href="https://1drv.ms/f/c/8d834935e09ce801/IgAHV3AUCk3xRLEbyvornycIAd7p4A2qleNA8HNAiSkxOtc?e=uoFJdK" class="link-item">
+                        <a href="http://217.107.102.71:90/kk/" target="_blank" class="link-item">
+                            <div class="link-content">
+                                <div class="link-icon">→</div>
+                                <div class="link-text">Контроль качества</div>
+                            </div>
+                            <div class="link-meta">Нормативные документы по КК</div>
+                        </a>
+                        <a href="https://1drv.ms/f/c/8d834935e09ce801/IgCaNnafrKwJQLTflJ-wnXU6AYfmO2znsF1G3H_q4hYxM50?e=P7hfSU" class="link-item">
                             <div class="link-content">
                                 <div class="link-icon">→</div>
                                 <div class="link-text">Новые документы</div>
                             </div>
                         </a>
-                        <!-- Нормативно-правовая база -->
-<div class="link-item dropdown-toggle">
-    <div class="link-content">
-        <div class="link-icon">⌄</div>
-        <div class="link-text">Нормативно-правовая база</div>
-    </div>
-</div>
-<div class="dropdown-content">
-    <!-- Первый подраздел: Приказы МОКПТД -->
-    <a href="https://1drv.ms/f/s!AgHonOA1SYONg6V9QJOtmDuNuSpnrw?e=jXOO9r" target="_blank" class="dropdown-link">
-        <div class="link-content">
-            <div class="link-icon">→</div>
-            <div class="link-text">Приказы МОКПТД</div>
-        </div>
-        <div class="dropdown-meta">Применимые к ПТО/кабинетам ГБ</div>
-    </a>
-    
-    <!-- Второй подраздел: Федеральные и региональные нормативные документы -->
-    <a href="https://1drv.ms/x/c/8d834935e09ce801/EQHonOA1SYMggI18_gAAAAABdstLdOmwQ6U6_s1A2Bq1og?e=aJm6HP" target="_blank" class="dropdown-link">
-        <div class="link-content">
-            <div class="link-icon">→</div>
-            <div class="link-text">Федеральные и региональные нормативные документы</div>
-        </div>
-    </a>
-</div>
-                       
+                        <a href="https://1drv.ms/f/s!AgHonOA1SYONg6V9QJOtmDuNuSpnrw?e=jXOO9r" target="_blank" class="link-item">
+                            <div class="link-content">
+                                <div class="link-icon">→</div>
+                                <div class="link-text">Приказы МОКПТД</div>
+                            </div>
+                        </a>
+                        <a href="https://1drv.ms/x/c/8d834935e09ce801/EQHonOA1SYMggI18_gAAAAABdstLdOmwQ6U6_s1A2Bq1og?e=aJm6HP" target="_blank" class="link-item">
+                            <div class="link-content">
+                                <div class="link-icon">→</div>
+                                <div class="link-text">Практические рекомендации Росздравнадзора</div>
+                            </div>
+                        </a>
                         <!-- Правовая навигация -->
                         <a href="https://1drv.ms/x/c/8d834935e09ce801/EbYfGwSPzF9MtGn1UVFjnsMBhAXrSZKlGIJvQa1m348HsA?e=H4TUz7" target="_blank" class="link-item">
                             <div class="link-content">
@@ -525,11 +513,11 @@
                     </div>
                 </div>
                 
-                <!-- Справочники -->
+                <!-- Справочник -->
 <div class="card card-3" id="drugs">
     <div class="card-header">
         <div class="card-icon">💊</div>
-        <h2>Справочники</h2>
+        <h2>Справочник</h2>
     </div>
     <div class="link-list">
         <!-- Справочники лекарственных препаратов (выпадающий список) -->
@@ -691,7 +679,13 @@
             </div>
             <div class="link-meta">Формат Excel</div>
         </a>
-        
+        <a href="https://docs.google.com/spreadsheets/d/1MqnrLh4yU9PO3dzlznTngd8kuIhMlv9gQPOMQPpoGsw/edit?usp=sharing" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Анкетирование</div>
+            </div>
+            <div class="link-meta">С целью выявления НПР</div>
+        </a>
     </div>
 </div>
                 
@@ -702,8 +696,24 @@
         <h2>Рабочие системы</h2>
     </div>
     <div class="link-list">
+        <!-- Сигнальная картотека -->
+        <a href="" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Сигнальная картотека</div>
+            </div>
+        </a>
         
-                                <!-- 1С-мокрота -->
+        <!-- Анализы -->
+        <a href="https://results.dnkom.ru/cabinet/partner/login" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Анализы</div>
+            </div>
+            <div class="link-meta">Лаборатория "ДНКОМ"</div>
+        </a>
+        
+        <!-- 1С-мокрота -->
         <a href="https://1c.mokptd.ru:8443/mis" target="_blank" class="link-item">
             <div class="link-content">
                 <div class="link-icon">→</div>
@@ -719,7 +729,13 @@
             </div>
         </a>
         
-        
+        <!-- Нежелательные события -->
+        <a href="https://ucp.mokptd.ru:9443/front/unevent/47f5f3b1-27ed-11ef-befd-04d4c4925ede" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Нежелательные события</div>
+            </div>
+        </a>
         
         <!-- Проверка полиса ОМС (выпадающий список) -->
         <div class="link-item dropdown-toggle">
@@ -775,14 +791,14 @@
     </div>
 </div>
                 
-              <!-- Работа с пациентами -->
+                <!-- Работа с пациентами -->
 <div class="card card-5" id="patient-work">
     <div class="card-header">
         <div class="card-icon">👨‍⚕️</div>
         <h2>Работа с пациентами</h2>
     </div>
     <div class="link-list">
-        <!-- Часто задаваемые вопросы -->
+        <!-- ИЗМЕНЕННАЯ ССЫЛКА НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ -->
         <a href="faq.html" class="link-item">
             <div class="link-content">
                 <div class="link-icon">→</div>
@@ -790,7 +806,7 @@
             </div>
         </a>
         
-        <!-- Информация для пациентов (выпадающий список) -->
+        <!-- Информация для пациентов с выпадающим списком -->
         <div class="link-item dropdown-toggle">
             <div class="link-content">
                 <div class="link-icon">⌄</div>
@@ -798,68 +814,93 @@
             </div>
         </div>
         <div class="dropdown-content">
-            <!-- Агит-папка (внутри информации для пациентов, тоже выпадающий) -->
-            <div class="link-item dropdown-toggle">
-                <div class="link-content">
-                    <div class="link-icon">⌄</div>
-                    <div class="link-text">Агит-папка</div>
-                </div>
+    <a href="https://1drv.ms/f/c/8d834935e09ce801/IgAB6JzgNUmDIICNPOgAAAAAAQiAwXwlpg4h0b-jXksWgUc?e=UhUGH3" target="_blank" class="dropdown-link">
+        <div class="link-content">
+            <div class="link-icon">→</div>
+            <div class="link-text">Агит-папка</div>
+        </div>
+    </a>
+</div>
+        
+        <!-- Паспорт участка с выпадающим списком -->
+        <div class="link-item dropdown-toggle">
+            <div class="link-content">
+                <div class="link-icon">⌄</div>
+                <div class="link-text">Работа на участке</div>
             </div>
-            <div class="dropdown-content">
-                <a href="https://ptdklin.github.io/o-profosmotrach/" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">О профосмотрах на туберкулез</div>
-                    </div>
-                </a>
-                <a href="https://ptdklin.github.io/About-surgical-treatment/" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">О хирургическом лечении</div>
-                    </div>
-                </a>
-                <a href="#" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">Тема 3</div>
-                    </div>
-                </a>
-                <a href="#" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">Тема 4</div>
-                    </div>
-                </a>
-                <a href="#" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">Тема 5</div>
-                    </div>
-                </a>
-                <a href="#" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">Тема 6</div>
-                    </div>
-                </a>
-                <a href="#" class="dropdown-link">
-                    <div class="link-content">
-                        <div class="link-icon">→</div>
-                        <div class="link-text">Тема 7</div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Можно добавить другие пункты здесь, например: -->
-            <!--
-            <a href="другое.html" class="dropdown-link">
+        </div>
+        <div class="dropdown-content">
+            <a href="address.html" class="dropdown-link">
                 <div class="link-content">
                     <div class="link-icon">→</div>
-                    <div class="link-text">Другая информация</div>
+                    <div class="link-text">Поиск по адресу</div>
                 </div>
             </a>
-            -->
+            <a href="https://1drv.ms/f/c/8d834935e09ce801/Eh3G9C4VxUZKnfglaOwTQlIBXwXqBByDfRc8ljcJm3Ir6g?e=Tf3AFY" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Паспорта участков</div>
+                </div>
+            </a>
         </div>
+        
+        <a href="clinical_cases.html" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Клинические случаи</div>
+            </div>
+        </a>
+        
+        <!-- НОВЫЙ РАЗДЕЛ: Шкалы и опросники -->
+        <div class="link-item dropdown-toggle">
+            <div class="link-content">
+                <div class="link-icon">⌄</div>
+                <div class="link-text">Шкалы и опросники</div>
+            </div>
+        </div>
+        <div class="dropdown-content">
+            <!-- Анкетирование (перенесено сюда) -->
+            <a href="https://docs.google.com/spreadsheets/d/1IqDCNdMeW3Qavc7ajgeq8ueR1wVBnr17CajXz29tje4/edit?usp=sharing" target="_blank" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Анкетирование</div>
+                </div>
+                <div class="dropdown-meta">Удовлетворенность</div>
+            </a>
+            
+            <!-- Оценка риска падений -->
+            <a href="fall_risk_assessment.html" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Оценка риска падений</div>
+                </div>
+            </a>
+            
+            <!-- Опросник 1 -->
+            <a href="questionnaire1.html" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Опросник 1</div>
+                </div>
+            </a>
+            
+            <!-- Опросник 2 -->
+            <a href="questionnaire2.html" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Опросник 2</div>
+                </div>
+            </a>
+            
+            <!-- Опросник 3 -->
+            <a href="questionnaire3.html" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">Опросник 3</div>
+                </div>
+            </a>
+        </div>
+        <!-- КОНЕЦ НОВОГО РАЗДЕЛА -->
     </div>
 </div>
                 
@@ -884,7 +925,13 @@
                                 <div class="link-text">Папка ТМК</div>
                             </div>
                         </a>
-                        
+                        <a href="https://drive.google.com/drive/folders/1GIHw6MCzqTaXVXDJVER19kBEBvvk_81f?usp=drive_link" target="_blank" class="link-item">
+    <div class="link-content">
+        <div class="link-icon">→</div>
+        <div class="link-text">Быстрый обмен данными</div>
+    </div>
+    <div class="link-meta">Общая папка для файлов</div>
+</a>
                         
                         <div class="link-item dropdown-toggle">
     <div class="link-content">
@@ -1005,438 +1052,11 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <!-- Соответствие практическим рекомендациям Росздравнадзора -->
-<div class="card card-2" id="rozdravnadzor-compliance">
-    <div class="card-header">
-        <div class="card-icon">📋</div>
-        <h2>Соответствие практическим рекомендациям Росздравнадзора</h2>
-    </div>
-    <div class="link-list">
-        <!-- Пункт 1 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">1. Организация противотуберкулезной помощи</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_1.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_1" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 2 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">2. Диагностика туберкулеза</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_2.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_2" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 3 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">3. Лечение туберкулеза</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_3.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_3" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 4 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">4. Профилактика туберкулеза</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_4.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_4" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 5 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">5. Мониторинг и контроль качества</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_5.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_5" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 6 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">6. Работа с контактами</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_6.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_6" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 7 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">7. Ведение медицинской документации</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_7.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_7" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 8 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">8. Лабораторная диагностика</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_8.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_8" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 9 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">9. Инструментальные методы исследования</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_9.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_9" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 10 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">10. Фармакотерапия и мониторинг</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_10.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_10" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 11 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">11. Работа с группами риска</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_11.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_11" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 12 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">12. Санитарно-противоэпидемические мероприятия</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_12.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_12" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 13 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">13. Организация диспансерного наблюдения</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_13.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_13" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 14 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">14. Профессиональная гигиена и безопасность</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_14.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_14" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 15 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">15. Взаимодействие с другими ЛПУ</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_15.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_15" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 16 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">16. Правовые аспекты работы</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_16.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_16" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 17 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">17. Обеспечение лекарственными средствами</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_17.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_17" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 18 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">18. Контроль качества медицинской помощи</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_18.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_18" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- Пункт 19 -->
-        <div class="link-item dropdown-toggle">
-            <div class="link-content">
-                <div class="link-icon">⌄</div>
-                <div class="link-text">19. Отчетность и статистика</div>
-            </div>
-        </div>
-        <div class="dropdown-content">
-            <a href="theory_19.html" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📚</div>
-                    <div class="link-text">Теоретическая часть</div>
-                </div>
-            </a>
-            <a href="https://1drv.ms/f/s/ссылка_на_папку_19" target="_blank" class="dropdown-link">
-                <div class="link-content">
-                    <div class="link-icon">📁</div>
-                    <div class="link-text">Пакет документов</div>
-                </div>
-            </a>
-         </div>
-</div>
+            
             <!-- Footer -->
             <div class="footer">
-    <p>Филиал "Клинский"</p>
-    <p>Адаптировано для ПТО/кабинетов ГБ</p>
-    <p><span class="year">2025</span></p>
-</div>
+                <p><span class="year">2024</span></p>
+            </div>
         </div>
     </main>
 
