@@ -14,7 +14,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
-        /* ОБНОВЛЕННАЯ ЦВЕТОВАЯ ПАЛИТРА: Фиолетовый и Бирюзовый */
+        /* ЦВЕТОВАЯ ПАЛИТРА */
         :root {
             --primary: #4B0082; /* Глубокий Фиолетовый / Индиго (для "Навигатор врача") */
             --primary-light: #f0f8ff; 
@@ -22,7 +22,7 @@
             --primary-very-light: #f3f8ff;
             --secondary: #64748b;
             --accent: #00BCD4; /* Яркий Бирюзовый */
-            --dark-turquoise: #009ACD; /* НОВЫЙ: Более контрастный сине-бирюзовый для "фтизиатра" */
+            --dark-turquoise: #009ACD; /* Контрастный сине-бирюзовый для "фтизиатра" */
             --success: #10b981;
             --warning: #f59e0b;
             --error: #ef4444;
@@ -44,18 +44,18 @@
             min-height: 100vh;
         }
         
-        /* ШАПКА: Расположение Лого + Текст. ВОЗВРАТ К СТАНДАРТНОМУ ОТСТУПУ */
+        /* ШАПКА: Расположение Лого + Текст. ЛЕВЫЙ ОТСТУП УВЕЛИЧЕН ДО 60PX */
         .content-header {
             background: var(--surface);
-            /* Убран сильный сдвиг. Стандартный padding: 35px сверху/снизу, 40px слева/справа */
-            padding: 35px 40px; 
+            /* Минимальный сдвиг вправо: 60px слева */
+            padding: 35px 40px 35px 60px; 
             border-bottom: 1px solid var(--border);
             box-shadow: var(--shadow);
             text-align: left; 
             position: relative;
             display: flex;
             align-items: center;
-            gap: 30px; /* Расстояние между лого и текстом */
+            gap: 30px; 
         }
 
         /* ГРАДИЕНТ НАД ШАПКОЙ */
@@ -97,7 +97,7 @@
         
         /* ЗАГОЛОВОК: Общий контейнер, сброс градиента */
         .page-title {
-            font-size: 3.5rem; /* Увеличенный размер */
+            font-size: 3.5rem; 
             font-weight: 800;
             background: none; 
             -webkit-background-clip: unset;
@@ -164,7 +164,7 @@
             flex-direction: column;
         }
 
-        /* ВЕРХНЯЯ ЧЕРТОЧКА КАРТОЧКИ: Обновлен на сине-фиолетово-бирюзовый */
+        /* ВЕРХНЯЯ ЧЕРТОЧКА КАРТОЧКИ */
         .card::before {
             content: "";
             position: absolute;
@@ -202,7 +202,7 @@
             transform: scale(1.05);
         }
         
-        /* ЦВЕТА БЛОКОВ (Оставлены как есть) */
+        /* ЦВЕТА БЛОКОВ */
         .card-1 {
             --block-color: #2563eb;
             --block-color-light: #eff6ff;
@@ -408,14 +408,14 @@
         @media (max-width: 768px) {
             .content-header {
                 padding: 25px 20px;
-                padding-left: 20px; /* Убираем смещение вправо на маленьких экранах */
+                padding-left: 20px; 
                 flex-direction: column;
                 align-items: flex-start;
                 text-align: left;
                 gap: 15px;
             }
             .header-logo {
-                width: 100px; /* Уменьшенный размер на мобильных */
+                width: 100px; 
                 height: 100px;
             }
             .header-text-container {
