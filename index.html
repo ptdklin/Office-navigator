@@ -327,26 +327,30 @@
         
         /* Footer */
         .footer {
-            text-align: center;
-            padding: 35px;
-            color: var(--text-secondary);
-            background: var(--surface);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-            margin-top: 35px;
-        }
-        
-        .footer p {
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        
-        .year {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.05rem;
-        }
+    text-align: center;
+    padding: 30px; /* Можно оставить 35px, но я уменьшил для компактности */
+    color: var(--text-secondary);
+    background: var(--surface);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    margin-top: 35px;
+    line-height: 1.8; /* Добавил для лучшего межстрочного расстояния */
+}
+
+.footer p {
+    margin-bottom: 6px; /* Уменьшил отступы между строками */
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.year {
+    color: var(--primary);
+    font-weight: 800; /* Ещё жирнее */
+    font-size: 1.3rem; /* Немного больше */
+    display: inline-block;
+    margin-top: 8px;
+}
         
         /* Responsive */
         @media (max-width: 1024px) {
@@ -1020,8 +1024,10 @@
             
             <!-- Footer -->
             <div class="footer">
-                <p><span class="year">Филиал "Клинский", адаптировано для ПТО/кабинетов ГБ</span></p>
-            </div>
+    <p>Филиал "Клинский"</p>
+    <p>Адаптировано для ПТО/кабинетов ГБ</p>
+    <p><span class="year">2025</span></p>
+</div>
         </div>
     </main>
 
