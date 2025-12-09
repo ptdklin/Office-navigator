@@ -512,99 +512,61 @@
                 </div>
                 
                 <!-- Справочник -->
-                <div class="card card-3" id="drugs">
-                    <div class="card-header">
-                        <div class="card-icon">💊</div>
-                        <h2>Справочник</h2>
-                    </div>
-                    <div class="link-list">
-                        <div class="link-item dropdown-toggle">
-                            <div class="link-content">
-                                <div class="link-icon">⌄</div>
-                                <div class="link-text">Справочники лекарственных препаратов</div>
-                            </div>
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="https://www.rlsnet.ru/" target="_blank" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">РЛС</div>
-                                </div>
-                            </a>
-                            <a href="https://www.vidal.ru/" target="_blank" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">ВИДАЛЬ</div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <a href="https://www.cardioneurology.ru/skf/" target="_blank" class="link-item">
-                            <div class="link-content">
-                                <div class="link-icon">→</div>
-                                <div class="link-text">Калькулятор СКФ</div>
-                            </div>
-                        </a>
-                        
-                        <a href="calculator_doz.html" class="link-item">
-                            <div class="link-content">
-                                <div class="link-icon">→</div>
-                                <div class="link-text">Калькулятор дозировок</div>
-                            </div>
-                        </a>
-                        
-                        <div class="link-item dropdown-toggle">
-                            <div class="link-content">
-                                <div class="link-icon">⌄</div>
-                                <div class="link-text">Взаимодействия ЛС</div>
-                            </div>
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="https://https://check-medicament.ru/" target="_blank" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">CheckMedicament.ru</div>
-                                </div>
-                            </a>
-                            <a href="https://www.drugs.com/drug_interactions.html" target="_blank" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">Drugs.com</div>
-                                </div>
-                            </a>
-                            <a href="https://translate.google.com/?sl=ru&tl=en&op=translate" target="_blank" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">Google Переводчик</div>
-                                </div>
-                                <div class="dropdown-meta">Для перевода англоязычных ресурсов</div>
-                            </a>
-                        </div>
-                        
-                        <div class="link-item dropdown-toggle">
-                            <div class="link-content">
-                                <div class="link-icon">⌄</div>
-                                <div class="link-text">Рекомендации</div>
-                            </div>
-                            <div class="link-meta">Взаимодействие ЛС с пищей, образ жизни и другие</div>
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="drugs.html" class="dropdown-link">
-                                <div class="link-content">
-                                    <div class="link-icon">→</div>
-                                    <div class="link-text">Drugs.com</div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <a href="comorb.html" class="link-item">
-                            <div class="link-content">
-                                <div class="link-icon">→</div>
-                                <div class="link-text">Индекс коморбидности</div>
-                            </div>
-                        </a>
-                                            </div>
-                </div>
+<div class="card card-3" id="drugs">
+    <div class="card-header">
+        <div class="card-icon">💊</div>
+        <h2>Справочник</h2>
+    </div>
+    <div class="link-list">
+        <!-- Убраны все dropdown-toggle и dropdown-content -->
+        
+        <a href="https://www.rlsnet.ru/" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">РЛС (справочник лекарств)</div>
+            </div>
+        </a>
+        
+        <a href="https://www.vidal.ru/" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">ВИДАЛЬ (справочник лекарств)</div>
+            </div>
+        </a>
+        
+        <a href="https://www.cardioneurology.ru/skf/" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Калькулятор СКФ</div>
+            </div>
+        </a>
+        
+        <a href="calculator_doz.html" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Калькулятор дозировок</div>
+            </div>
+        </a>
+        
+        <!-- Взаимодействия ЛС теперь просто ссылка на CheckMedicament.ru -->
+        <a href="https://check-medicament.ru/" target="_blank" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Взаимодействия ЛС</div>
+            </div>
+            <div class="link-meta">CheckMedicament.ru</div>
+        </a>
+        
+        <!-- Раздел "Рекомендации" УБРАН ПОЛНОСТЬЮ -->
+        
+        <a href="comorb.html" class="link-item">
+            <div class="link-content">
+                <div class="link-icon">→</div>
+                <div class="link-text">Индекс коморбидности</div>
+            </div>
+        </a>
+    </div>
+</div>
 
                 <!-- Нежелательные реакции на ЛС -->
                 <div class="card card-8" id="adverse-reactions">
