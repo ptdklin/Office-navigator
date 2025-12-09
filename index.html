@@ -510,19 +510,27 @@
         <h2>Справочник</h2>
     </div>
     <div class="link-list">
-        <a href="https://www.rlsnet.ru/" target="_blank" class="link-item">
+        <!-- Справочники лекарств (выпадающий список) -->
+        <div class="link-item dropdown-toggle">
             <div class="link-content">
-                <div class="link-icon">→</div>
-                <div class="link-text">РЛС (справочник лекарств)</div>
+                <div class="link-icon">⌄</div>
+                <div class="link-text">Справочники лекарственных препаратов</div>
             </div>
-        </a>
-        
-        <a href="https://www.vidal.ru/" target="_blank" class="link-item">
-            <div class="link-content">
-                <div class="link-icon">→</div>
-                <div class="link-text">ВИДАЛЬ (справочник лекарств)</div>
-            </div>
-        </a>
+        </div>
+        <div class="dropdown-content">
+            <a href="https://www.rlsnet.ru/" target="_blank" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">РЛС</div>
+                </div>
+            </a>
+            <a href="https://www.vidal.ru/" target="_blank" class="dropdown-link">
+                <div class="link-content">
+                    <div class="link-icon">→</div>
+                    <div class="link-text">ВИДАЛЬ</div>
+                </div>
+            </a>
+        </div>
         
         <a href="https://www.cardioneurology.ru/skf/" target="_blank" class="link-item">
             <div class="link-content">
@@ -538,18 +546,11 @@
             </div>
         </a>
         
-        <!-- Взаимодействия ЛС - просто ссылка без комментария -->
+        <!-- Взаимодействия ЛС - просто ссылка -->
         <a href="https://check-medicament.ru/" target="_blank" class="link-item">
             <div class="link-content">
                 <div class="link-icon">→</div>
                 <div class="link-text">Взаимодействия ЛС</div>
-            </div>
-        </a>
-        
-        <a href="comorb.html" class="link-item">
-            <div class="link-content">
-                <div class="link-icon">→</div>
-                <div class="link-text">Индекс коморбидности</div>
             </div>
         </a>
     </div>
