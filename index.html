@@ -149,7 +149,6 @@
             margin-left: 20px; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 350px;
-            /* ИЗМЕНЕНИЯ: Уменьшена высота до 120px для 3-х строк */
             height: 120px; 
             overflow: hidden; 
             display: flex;
@@ -161,9 +160,9 @@
         /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
         .announcement-header {
             display: flex;
-            justify-content: space-between; /* Распределяет элементы по краям */
+            /* justify-content: space-between; <-- УДАЛЕНО, чтобы margin-left: auto; работал */
             align-items: center;
-            margin-bottom: 8px; /* Небольшой отступ от текста */
+            margin-bottom: 8px; 
             flex-shrink: 0;
         }
         /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
@@ -172,7 +171,7 @@
             color: var(--dark-turquoise); 
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0; /* Убираем отступ, т.к. он в .announcement-header */
+            margin-bottom: 0; 
             display: flex;
             align-items: center;
             flex-shrink: 0; 
@@ -204,15 +203,18 @@
             color: white;
             border: none;
             border-radius: 8px;
-            /* Уменьшенный padding и font-size */
             padding: 4px 10px; 
             font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
+            margin-top: 0; 
             align-self: auto; 
             flex-shrink: 0; 
+            
+            /* ИЗМЕНЕНИЯ ДЛЯ СДВИГА */
+            margin-left: auto; /* Прижимает к правому краю, создавая разрыв с h3 */
+            margin-right: 5px; /* Создает отступ в 5px от правого внутреннего края */
         }
         
         .show-announcement-btn:hover {
@@ -1157,7 +1159,7 @@
 
         /* --- JS ДЛЯ БЛОКА ПЛАНОВЫХ ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
         // Переменная для планового (не срочного) объявления. 
-        const nonUrgentAnnouncement = "ооо";
+        const nonUrgentAnnouncement = "Обратите внимание: по распоряжению главного врача ГБУЗ МО МОКПТД Смердина С.В. еженедельно будут проводиться видео-селекторные совещания руководителей филиалов с сотрудниками противотуберкулезных кабинетов.";
 
         document.addEventListener('DOMContentLoaded', () => {
             const announcementBox = document.getElementById('announcement-content');
