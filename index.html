@@ -150,7 +150,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 350px;
             /* ИЗМЕНЕНИЯ: Уменьшена высота до 3х строк и скрыта прокрутка */
-            /* line-height 1.5 * 3 строки + 15px сверху и 15px снизу = ~100px */
             height: 100px; 
             overflow: hidden; 
             display: flex;
@@ -200,6 +199,7 @@
             transition: background-color 0.3s ease;
             margin-top: 10px;
             align-self: flex-start; /* Прижимаем к левому краю */
+            flex-shrink: 0; /* Чтобы кнопка не обрезалась при обрезке текста */
         }
         
         .show-announcement-btn:hover {
@@ -1103,8 +1103,8 @@
                 });
             }
         });
-        
-        // Функция для открытия с переводчиком (оставляем без изменений)
+
+        // Функция для открытия с переводчиком
         function openWithTranslator(event) {
             event.preventDefault();
             
@@ -1117,9 +1117,31 @@
             return false;
         }
 
+        /* --- JS ДЛЯ МОДАЛЬНОГО ОКНА (ОБЩАЯ ФУНКЦИЯ) --- */
+        function createModal(text, title = 'Сообщение') {
+            const existingModal = document.querySelector('div[data-modal-type="announcement-modal"]');
+            if (existingModal) existingModal.remove(); 
+
+            const modal = document.createElement('div');
+            modal.setAttribute('data-modal-type', 'announcement-modal');
+            
+            // Стили для модального окна с крупным, нормальным шрифтом
+            modal.innerHTML = `
+                <div onclick="if(event.target === this) this.remove()" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:10000;padding:20px;cursor:pointer;">
+                    <div style="background:white;padding:30px;border-radius:15px;max-width:650px;width:90%;max-height:90vh;overflow-y:auto;box-shadow:0 15px 35px rgba(0,0,0,0.3);border-top:5px solid var(--accent);position:relative;cursor:auto; line-height: 1.5; font-size: 1.15rem; color: var(--text-primary);">
+                        <h2 style="color: var(--dark-turquoise); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px;">${title}</h2>
+                        <div style="font-size:1.15rem; line-height:1.7; color:var(--text-primary); margin-bottom: 30px; white-space: pre-wrap;">${text}</div>
+                        <button onclick="this.closest('div[data-modal-type=\\'announcement-modal\\']').remove()" style="display:block;margin:0 auto;padding:12px 30px;background:var(--primary);color:white;border:none;border-radius:10px;font-size:1.05rem;cursor:pointer;font-weight:600;min-width: 150px;">Закрыть</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        /* --- КОНЕЦ JS ДЛЯ МОДАЛЬНОГО ОКНА --- */
+
         /* --- JS ДЛЯ БЛОКА ПЛАНОВЫХ ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
         // Переменная для планового (не срочного) объявления. 
-        const nonUrgentAnnouncement = "Обратите внимание: по распоряжению главного врача ГБУЗ МО МОКПТД Смердина С.В. еженедельно будут проводиться видео-селекторные совещания руководителей филиалов с сотрудниками противотуберкулезных кабинетов.  Это очень важная и объемная информация, которую необходимо прочитать полностью. Планируется обсудить ряд ключевых вопросов, касающихся новых протоколов лечения и диагностики.";
+        const nonUrgentAnnouncement = "Обратите внимание: по распоряжению главного врача ГБУЗ МО МОКПТД Смердина С.В. еженедельно будут проводиться видео-селекторные совещания руководителей филиалов с сотрудниками противотуберкулезных кабинетов.";
 
         document.addEventListener('DOMContentLoaded', () => {
             const announcementBox = document.getElementById('announcement-content');
@@ -1132,7 +1154,7 @@
                 // Показываем кнопку и навешиваем событие
                 showBtn.style.display = 'block';
                 showBtn.addEventListener('click', () => {
-                    createModal(nonUrgentAnnouncement, 'Плановое объявление');
+                    createModal(nonUrgentAnnouncement, 'Объявление'); // Используем полный текст в модальном окне
                 });
             } else {
                 // Если объявлений нет
@@ -1140,37 +1162,20 @@
                 showBtn.style.display = 'none'; // Скрываем кнопку
             }
         });
+        /* --- КОНЕЦ JS ДЛЯ ПЛАНОВЫХ ОБЪЯВЛЕНИЙ --- */
 
-        // Функция для создания общего модального окна
-        function createModal(text, title = 'Важное сообщение') {
-            const existingModal = document.querySelector('div[data-modal-type="announcement-modal"]');
-            if (existingModal) existingModal.remove(); // Удаляем предыдущее, если есть
-
-            const modal = document.createElement('div');
-            modal.setAttribute('data-modal-type', 'announcement-modal');
-            
-            // Стили для модального окна (крупный, удобный для чтения шрифт)
-            modal.innerHTML = `
-                <div onclick="if(event.target === this) this.remove()" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:10000;padding:20px;cursor:pointer;">
-                    <div style="background:white;padding:30px;border-radius:15px;max-width:650px;width:90%;max-height:90vh;overflow-y:auto;box-shadow:0 15px 35px rgba(0,0,0,0.3);border-top:5px solid var(--accent);position:relative;cursor:auto; line-height: 1.5; font-size: 1.15rem; color: var(--text-primary);">
-                        <h2 style="color: var(--dark-turquoise); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px;">${title}</h2>
-                        <div style="font-size:1.05rem; line-height:1.7; color:var(--text-primary); margin-bottom: 30px; white-space: pre-wrap;">${text}</div>
-                        <button onclick="this.closest('div[data-modal-type=\\'announcement-modal\\']').remove()" style="display:block;margin:0 auto;padding:12px 30px;background:var(--primary);color:white;border:none;border-radius:10px;font-size:1.05rem;cursor:pointer;font-weight:600;min-width: 150px;">Закрыть</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-        }
-        /* --- КОНЕЦ JS --- */
     </script>
     <script>
-        // Окно объявлений (Срочное, ВСПЛЫВАЮЩЕЕ) - использует новую функцию createModal
+        // Окно объявлений (Срочное, ВСПЛЫВАЮЩЕЕ) - использует общую функцию createModal
         const announcementText = "Ознакомьтесь с приказом № 211-25 от 27.11.2025 Об утверждении алгоритма назначения МГМ пациентам с подозрением или выявленным диагнозом Тб расположен в разделе Новые документы";  // Впиши текст объявления сюда
 
         if (announcementText) {
              // Показываем срочное объявление сразу после загрузки
              document.addEventListener('DOMContentLoaded', () => {
-                createModal(announcementText, '⚠️ Срочное объявление');
+                // Проверяем, что функция createModal уже определена
+                if (typeof createModal === 'function') {
+                    createModal(announcementText, '⚠️ Срочное объявление');
+                }
              });
         }
     </script>
