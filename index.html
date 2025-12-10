@@ -158,31 +158,31 @@
             flex-shrink: 0; 
         }
         
-        /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
+        /* --- ИЗМЕНЕНИЕ 1: БЛОК .announcement-header --- */
         .announcement-header {
             display: flex;
-            /* УДАЛЕНО: justify-content: space-between; */
+            /* ГАРАНТИРОВАННО РАСТАЛКИВАЕТ ЭЛЕМЕНТЫ ПО КРАЯМ КОНТЕЙНЕРА */
+            justify-content: space-between; 
             align-items: center;
             margin-bottom: 8px; /* Небольшой отступ от текста */
             flex-shrink: 0;
-            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ГАРАНТИРУЕТ ПОЗИЦИОНИРОВАНИЕ */
-            position: relative;
-            width: 100%;
+            /* УДАЛЕНЫ position: relative; и width: 100%; */
         }
-        /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
+        /* --- КОНЕЦ ИЗМЕНЕНИЯ 1 --- */
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0; /* Убираем отступ, т.к. он в .announcement-header */
+            margin-bottom: 0; 
             display: flex;
             align-items: center;
             flex-shrink: 0; 
-            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ОТСТУП, ЧТОБЫ ТЕКСТ НЕ ПЕРЕКРЫВАЛСЯ */
-            padding-right: 80px; 
+            /* ИЗМЕНЕНИЕ 2: УДАЛЕН PADDING ДЛЯ СМЕЩЕНИЯ */
+            padding-right: 0; 
         }
 
+        /* УДАЛЕНЫ СТИЛИ ДЛЯ .announcements-icon */
         .announcements-icon {
             margin-right: 8px;
             color: var(--primary);
@@ -203,7 +203,7 @@
             flex-grow: 1; 
         }
         
-        /* Стиль для кнопки "Показать" */
+        /* --- ИЗМЕНЕНИЕ 3: БЛОК .show-announcement-btn --- */
         .show-announcement-btn {
             background-color: var(--primary);
             color: white;
@@ -215,17 +215,17 @@
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
+            margin-top: 0; 
             align-self: auto; 
             flex-shrink: 0; 
-            /* УДАЛЕНО: margin-left: auto; */
-            
-            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ГАРАНТИРОВАННОЕ АБСОЛЮТНОЕ ПОЗИЦИОНИРОВАНИЕ */
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            /* УДАЛЕНЫ ВСЕ СТИЛИ АБСОЛЮТНОГО ПОЗИЦИОНИРОВАНИЯ И !important */
+            position: static;
+            right: auto;
+            top: auto;
+            transform: none;
+            margin-left: 10px; /* Немного отступа от заголовка */
         }
+        /* --- КОНЕЦ ИЗМЕНЕНИЯ 3 --- */
         
         .show-announcement-btn:hover {
             background-color: var(--primary-dark);
@@ -606,7 +606,7 @@
             <div class="announcements-box-container">
                 <div class="announcements-box">
                     <div class="announcement-header">
-                        <h3><span class="announcements-icon">📣</span> Объявления </h3>
+                        <h3>Объявления</h3> 
                         <button id="show-announcement-btn" class="show-announcement-btn" style="display: none;">Показать</button>
                     </div>
                     
@@ -1129,7 +1129,7 @@
                 document.querySelectorAll('.dropdown-content').forEach(dropdown => {
                     dropdown.classList.remove('show');
                 });
-            }
+            });
         });
 
         // Функция для открытия с переводчиком
@@ -1169,7 +1169,7 @@
 
         /* --- JS ДЛЯ БЛОКА ПЛАНОВЫХ ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
         // Переменная для планового (не срочного) объявления. 
-        const nonUrgentAnnouncement = "ооощщ";
+        const nonUrgentAnnouncement = "ооо";
 
         document.addEventListener('DOMContentLoaded', () => {
             const announcementBox = document.getElementById('announcement-content');
@@ -1202,7 +1202,7 @@
              document.addEventListener('DOMContentLoaded', () => {
                 // Проверяем, что функция createModal уже определена
                 if (typeof createModal === 'function') {
-                    createModal(announcementText, '⚠️ Важное объявление');
+                    createModal(announcementText, '⚠️ Срочное объявление');
                 }
              });
         }
