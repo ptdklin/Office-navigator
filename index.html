@@ -135,37 +135,47 @@
         .announcements-box-container {
             display: flex;
             align-items: center;
-            justify-content: flex-end; /* Сдвигает блок объявлений вправо */
+            justify-content: flex-end; 
             flex-grow: 1;
-            align-self: stretch; /* Растягивает контейнер, чтобы он занимал доступное место */
+            align-self: stretch; 
         }
         
         .announcements-box {
-            background-color: var(--primary-very-light); /* Очень светлый фон, чтобы не был броским */
+            background-color: var(--primary-very-light); 
             border: 1px solid var(--border);
-            border-left: 5px solid var(--accent); /* Тонкая полоска акцентного цвета */
+            border-left: 5px solid var(--accent); 
             border-radius: 12px;
             padding: 15px 20px;
-            margin-left: 20px; /* Отступ от текста заголовка */
+            margin-left: 20px; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 350px;
-            /* ИЗМЕНЕНИЯ: Увеличена высота до 130px, чтобы вместить заголовок, 3 строки текста и кнопку */
-            height: 130px; 
+            /* ИЗМЕНЕНИЯ: Уменьшена высота до 120px для 3-х строк */
+            height: 120px; 
             overflow: hidden; 
             display: flex;
             flex-direction: column;
-            align-self: center; /* Выравнивание по центру вертикально относительно лого/текста */
-            flex-shrink: 0; /* Чтобы не сжимался */
+            align-self: center; 
+            flex-shrink: 0; 
         }
+        
+        /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
+        .announcement-header {
+            display: flex;
+            justify-content: space-between; /* Распределяет элементы по краям */
+            align-items: center;
+            margin-bottom: 8px; /* Небольшой отступ от текста */
+            flex-shrink: 0;
+        }
+        /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 0; /* Убираем отступ, т.к. он в .announcement-header */
             display: flex;
             align-items: center;
-            flex-shrink: 0; /* Не сжимать заголовок */
+            flex-shrink: 0; 
         }
 
         .announcements-icon {
@@ -185,7 +195,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            flex-grow: 1; /* Разрешить тексту занимать доступное пространство */
+            flex-grow: 1; 
         }
         
         /* Стиль для кнопки "Показать" */
@@ -194,14 +204,15 @@
             color: white;
             border: none;
             border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 0.85rem;
+            /* Уменьшенный padding и font-size */
+            padding: 4px 10px; 
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 10px;
-            align-self: flex-start; /* Прижимаем к левому краю */
-            flex-shrink: 0; /* Чтобы кнопка не обрезалась */
+            margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
+            align-self: auto; 
+            flex-shrink: 0; 
         }
         
         .show-announcement-btn:hover {
@@ -213,7 +224,7 @@
             font-style: italic;
             font-weight: 400;
         }
-        /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
+        /* --- КОНЕЦ СТИЛЕЙ БЛОКА ОБЪЯВЛЕНИЙ --- */
 
         .content-area {
             flex: 1;
@@ -582,9 +593,12 @@
 
             <div class="announcements-box-container">
                 <div class="announcements-box">
-                    <h3><span class="announcements-icon">📣</span> Объявления</h3>
+                    <div class="announcement-header">
+                        <h3><span class="announcements-icon">📣</span> Объявления</h3>
+                        <button id="show-announcement-btn" class="show-announcement-btn" style="display: none;">Показать</button>
+                    </div>
+                    
                     <div id="announcement-content"></div>
-                    <button id="show-announcement-btn" class="show-announcement-btn" style="display: none;">Показать</button>
                 </div>
             </div>
             </header>
