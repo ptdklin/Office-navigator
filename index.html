@@ -158,15 +158,18 @@
             flex-shrink: 0; 
         }
         
-        /* --- ИЗМЕНЕНИЕ 1: БЛОК .announcement-header --- */
+        /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
         .announcement-header {
             display: flex;
-            /* justify-content: space-between; УДАЛЕН */
+            /* УДАЛЕНО: justify-content: space-between; */
             align-items: center;
             margin-bottom: 8px; /* Небольшой отступ от текста */
             flex-shrink: 0;
+            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ГАРАНТИРУЕТ ПОЗИЦИОНИРОВАНИЕ */
+            position: relative;
+            width: 100%;
         }
-        /* --- КОНЕЦ ИЗМЕНЕНИЯ 1 --- */
+        /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
@@ -176,6 +179,8 @@
             display: flex;
             align-items: center;
             flex-shrink: 0; 
+            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ОТСТУП, ЧТОБЫ ТЕКСТ НЕ ПЕРЕКРЫВАЛСЯ */
+            padding-right: 80px; 
         }
 
         .announcements-icon {
@@ -198,7 +203,7 @@
             flex-grow: 1; 
         }
         
-        /* --- ИЗМЕНЕНИЕ 2: БЛОК .show-announcement-btn --- */
+        /* Стиль для кнопки "Показать" */
         .show-announcement-btn {
             background-color: var(--primary);
             color: white;
@@ -213,10 +218,14 @@
             margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
             align-self: auto; 
             flex-shrink: 0; 
-            /* ДОБАВЛЕНО: Для смещения кнопки максимально вправо (теперь с !important) */
-            margin-left: auto !important; 
+            /* УДАЛЕНО: margin-left: auto; */
+            
+            /* ИЗМЕНЕНИЕ ДЛЯ СМЕЩЕНИЯ КНОПКИ: ГАРАНТИРОВАННОЕ АБСОЛЮТНОЕ ПОЗИЦИОНИРОВАНИЕ */
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
-        /* --- КОНЕЦ ИЗМЕНЕНИЯ 2 --- */
         
         .show-announcement-btn:hover {
             background-color: var(--primary-dark);
