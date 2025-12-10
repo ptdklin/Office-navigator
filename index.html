@@ -161,7 +161,7 @@
         /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
         .announcement-header {
             display: flex;
-            justify-content: space-between; /* Распределяет элементы по краям */
+            /* УДАЛЕНО: justify-content: space-between; */
             align-items: center;
             margin-bottom: 8px; /* Небольшой отступ от текста */
             flex-shrink: 0;
@@ -213,6 +213,8 @@
             margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
             align-self: auto; 
             flex-shrink: 0; 
+            /* ДОБАВЛЕНО: Для смещения кнопки максимально вправо */
+            margin-left: auto; 
         }
         
         .show-announcement-btn:hover {
