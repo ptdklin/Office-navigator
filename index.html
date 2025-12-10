@@ -108,22 +108,13 @@
             line-height: 1.1;
         }
 
-        /* Стилизация части "Навигатор врача" - СИНИЙ/ФИОЛЕТОВЫЙ */
-        .title-blue {
+        /* Стилизация части "Навигатор" - ФИОЛЕТОВЫЙ */
+        .title-primary { 
             color: var(--primary); /* Deep Violet/Indigo */
         }
 
-        /* Стилизация тире (-) - ГРАДИЕНТ/ПЕРЕХОДНЫЙ ЦВЕТ */
-        .title-hyphen {
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); /* Фиолетовый -> Бирюзовый */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Стилизация части "фтизиатра" - НОВЫЙ КОНТРАСТНЫЙ СИНЕ-БИРЮЗОВЫЙ */
-        .title-turquoise {
+        /* Стилизация части "врача-фтизиатра" - СИНЕ-БИРЮЗОВЫЙ */
+        .title-secondary {
             color: var(--dark-turquoise); 
         }
 
@@ -151,7 +142,7 @@
         }
         
         .card {
-            background: var(--surface);
+            background: var(--block-color-light); /* ИЗМЕНЕНИЕ 2: Сделали фон карточки бледно-цветным */
             border-radius: 20px;
             padding: 28px;
             box-shadow: var(--shadow-lg);
@@ -475,8 +466,7 @@
             <div class="header-text-container">
                 <div class="institution-main">ГБУЗ МО МОКПТД</div>
                 <h1 class="page-title">
-                    <span class="title-blue">Навигатор врача</span><span class="title-hyphen">-</span><span class="title-turquoise">фтизиатра</span>
-                </h1>
+                    <span class="title-primary">Навигатор</span> <span class="title-secondary">врача-фтизиатра</span> </h1>
                 <p class="page-description">Система доступа к профессиональным ресурсам (для противотуберкулезных кабинетов)</p>
                 <p class="page-description" style="margin-top: 20px; font-size: 1.8rem; font-weight: 700; color: #dc2626; text-align: left; line-height: 1.3;"></p>
             </div>
