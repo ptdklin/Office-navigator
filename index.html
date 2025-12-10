@@ -1,3 +1,18 @@
+Я понял вашу задачу: **восстановить исходную ширину окна, но увеличить его максимальную высоту примерно на 10%**.
+
+Проблема в предыдущем шаге возникла из-за того, что я изменил параметр `max-width` с `650px` на `550px`, а также сдвинул окно вправо (`justify-content: flex-end`), что создало эффект его "расширения" влево при центрировании.
+
+Я отменил все изменения, касающиеся ширины и горизонтального выравнивания, и скорректировал только высоту:
+
+1.  **Ширина восстановлена:** `max-width: 650px`.
+2.  **Окно снова по центру:** `justify-content: center`.
+3.  **Высота увеличена:**
+      * Максимальная высота увеличена с `90vh` до **`99vh`** (почти на 10%).
+      * Внутренние отступы (padding) увеличены с `30px` до **`40px`** для визуального увеличения минимальной высоты.
+
+Вот полный обновленный код.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -160,7 +175,6 @@
         /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
         .announcement-header {
             display: flex;
-            /* justify-content: space-between; <-- УДАЛЕНО, чтобы margin-left: auto; работал */
             align-items: center;
             margin-bottom: 8px; 
             flex-shrink: 0;
@@ -212,9 +226,9 @@
             align-self: auto; 
             flex-shrink: 0; 
             
-            /* ИЗМЕНЕНИЯ ДЛЯ СДВИГА */
-            margin-left: auto; /* Прижимает к правому краю, создавая разрыв с h3 */
-            margin-right: 5px; /* Создает отступ в 5px от правого внутреннего края */
+            /* Сдвиг кнопки, как в предыдущей версии */
+            margin-left: auto; 
+            margin-right: 5px; 
         }
         
         .show-announcement-btn:hover {
@@ -1143,10 +1157,21 @@
             const modal = document.createElement('div');
             modal.setAttribute('data-modal-type', 'announcement-modal');
             
-            // Стили для модального окна с крупным, нормальным шрифтом
+            // Стили для модального окна
             modal.innerHTML = `
-                <div onclick="if(event.target === this) this.remove()" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:10000;padding:20px;cursor:pointer;">
-                    <div style="background:white;padding:30px;border-radius:15px;max-width:650px;width:90%;max-height:90vh;overflow-y:auto;box-shadow:0 15px 35px rgba(0,0,0,0.3);border-top:5px solid var(--accent);position:relative;cursor:auto; line-height: 1.5; font-size: 1.15rem; color: var(--text-primary);">
+                <div onclick="if(event.target === this) this.remove()" 
+                    style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);
+                    display:flex;align-items:center;
+                    justify-content:center; /* ВОССТАНОВЛЕНО: Центрирование окна */
+                    z-index:10000;padding:20px;cursor:pointer;">
+                    <div style="background:white;
+                        padding:40px; /* ИЗМЕНЕНИЕ: Увеличение отступов для увеличения высоты */
+                        border-radius:15px;
+                        max-width:650px; /* ВОССТАНОВЛЕНО: Исходная ширина 650px */
+                        width:90%;
+                        max-height:99vh; /* ИЗМЕНЕНИЕ: Увеличение максимальной высоты до 99vh */
+                        overflow-y:auto;
+                        box-shadow:0 15px 35px rgba(0,0,0,0.3);border-top:5px solid var(--accent);position:relative;cursor:auto; line-height: 1.5; font-size: 1.15rem; color: var(--text-primary);">
                         <h2 style="color: var(--dark-turquoise); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px;">${title}</h2>
                         <div style="font-size:1.15rem; line-height:1.7; color:var(--text-primary); margin-bottom: 30px; white-space: pre-wrap;">${text}</div>
                         <button onclick="this.closest('div[data-modal-type=\\'announcement-modal\\']').remove()" style="display:block;margin:0 auto;padding:12px 30px;background:var(--primary);color:white;border:none;border-radius:10px;font-size:1.05rem;cursor:pointer;font-weight:600;min-width: 150px;">Закрыть</button>
@@ -1199,3 +1224,4 @@
     </script>
 </body>
 </html>
+```
