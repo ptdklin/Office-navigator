@@ -158,15 +158,15 @@
             flex-shrink: 0; 
         }
         
-        /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ ЗАГОЛОВКА И КНОПКИ --- */
+        /* --- ИЗМЕНЕНИЕ 1: БЛОК .announcement-header --- */
         .announcement-header {
             display: flex;
-            /* УДАЛЕНО: justify-content: space-between; */
+            /* justify-content: space-between; УДАЛЕН */
             align-items: center;
             margin-bottom: 8px; /* Небольшой отступ от текста */
             flex-shrink: 0;
         }
-        /* --- КОНЕЦ НОВОГО СТИЛЯ --- */
+        /* --- КОНЕЦ ИЗМЕНЕНИЯ 1 --- */
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
@@ -198,7 +198,7 @@
             flex-grow: 1; 
         }
         
-        /* Стиль для кнопки "Показать" */
+        /* --- ИЗМЕНЕНИЕ 2: БЛОК .show-announcement-btn --- */
         .show-announcement-btn {
             background-color: var(--primary);
             color: white;
@@ -213,9 +213,10 @@
             margin-top: 0; /* Отступ убран, так как кнопка в заголовке */
             align-self: auto; 
             flex-shrink: 0; 
-            /* ДОБАВЛЕНО: Для смещения кнопки максимально вправо */
-            margin-left: auto; 
+            /* ДОБАВЛЕНО: Для смещения кнопки максимально вправо (теперь с !important) */
+            margin-left: auto !important; 
         }
+        /* --- КОНЕЦ ИЗМЕНЕНИЯ 2 --- */
         
         .show-announcement-btn:hover {
             background-color: var(--primary-dark);
