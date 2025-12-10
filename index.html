@@ -108,7 +108,7 @@
             line-height: 1.1;
         }
 
-        /* --- ИСПРАВЛЕНИЕ: КОРРЕКТНАЯ СТИЛИЗАЦИЯ ЗАГОЛОВКА --- */
+        /* --- КОРРЕКТНАЯ СТИЛИЗАЦИЯ ЗАГОЛОВКА --- */
         /* Стилизация части "Навигатор" - ФИОЛЕТОВЫЙ */
         .title-navigator { 
             color: var(--primary); 
@@ -118,7 +118,7 @@
         .title-specialist {
             color: var(--dark-turquoise); 
         }
-        /* --- КОНЕЦ ИСПРАВЛЕНИЯ ЗАГОЛОВКА --- */
+        /* --- КОНЕЦ СТИЛИЗАЦИИ ЗАГОЛОВКА --- */
 
 
         .page-description {
@@ -131,7 +131,7 @@
             text-align: left;
         }
         
-        /* --- НОВЫЙ СТИЛЬ: БЛОК ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
+        /* --- БЛОК ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
         .announcements-box-container {
             display: flex;
             align-items: center;
@@ -140,6 +140,7 @@
             align-self: stretch; 
         }
         
+        /* ИСПРАВЛЕНИЕ: height: 120px заменен на min-height: 120px для видимости короткого текста */
         .announcements-box {
             background-color: var(--primary-very-light); 
             border: 1px solid var(--border);
@@ -149,8 +150,8 @@
             margin-left: 20px; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 350px;
-            /* ИЗМЕНЕНИЯ: Уменьшена высота до 120px для 3-х строк */
-            height: 120px; 
+            /* Изменено на минимальную высоту, чтобы текст не пропадал при малом количестве контента */
+            min-height: 120px; 
             overflow: hidden; 
             display: flex;
             flex-direction: column;
@@ -158,17 +159,16 @@
             flex-shrink: 0; 
         }
         
-        /* --- ИЗМЕНЕНИЕ 1: БЛОК .announcement-header --- */
+        /* ИСПРАВЛЕНИЕ: justify-content: space-between для разделения заголовка и кнопки */
         .announcement-header {
             display: flex;
             /* ГАРАНТИРОВАННО РАСТАЛКИВАЕТ ЭЛЕМЕНТЫ ПО КРАЯМ КОНТЕЙНЕРА */
             justify-content: space-between; 
             align-items: center;
-            margin-bottom: 8px; /* Небольшой отступ от текста */
+            margin-bottom: 8px; 
             flex-shrink: 0;
-            /* УДАЛЕНЫ position: relative; и width: 100%; */
         }
-        /* --- КОНЕЦ ИЗМЕНЕНИЯ 1 --- */
+        /* --- КОНЕЦ ИСПРАВЛЕНИЯ --- */
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
@@ -178,11 +178,10 @@
             display: flex;
             align-items: center;
             flex-shrink: 0; 
-            /* ИЗМЕНЕНИЕ 2: УДАЛЕН PADDING ДЛЯ СМЕЩЕНИЯ */
             padding-right: 0; 
         }
 
-        /* УДАЛЕНЫ СТИЛИ ДЛЯ .announcements-icon */
+        /* Стиль для иконки рупора удален */
         .announcements-icon {
             margin-right: 8px;
             color: var(--primary);
@@ -203,13 +202,11 @@
             flex-grow: 1; 
         }
         
-        /* --- ИЗМЕНЕНИЕ 3: БЛОК .show-announcement-btn --- */
         .show-announcement-btn {
             background-color: var(--primary);
             color: white;
             border: none;
             border-radius: 8px;
-            /* Уменьшенный padding и font-size */
             padding: 4px 10px; 
             font-size: 0.8rem;
             font-weight: 600;
@@ -218,14 +215,10 @@
             margin-top: 0; 
             align-self: auto; 
             flex-shrink: 0; 
-            /* УДАЛЕНЫ ВСЕ СТИЛИ АБСОЛЮТНОГО ПОЗИЦИОНИРОВАНИЯ И !important */
+            /* Убеждаемся, что нет конфликтующего позиционирования */
             position: static;
-            right: auto;
-            top: auto;
-            transform: none;
-            margin-left: 10px; /* Немного отступа от заголовка */
+            margin-left: 10px; 
         }
-        /* --- КОНЕЦ ИЗМЕНЕНИЯ 3 --- */
         
         .show-announcement-btn:hover {
             background-color: var(--primary-dark);
@@ -252,7 +245,7 @@
         }
         
         .card {
-            background: var(--surface); /* Фон карточки белый */
+            background: var(--surface); 
             border-radius: 20px;
             padding: 28px;
             box-shadow: var(--shadow-lg);
@@ -1129,7 +1122,7 @@
                 document.querySelectorAll('.dropdown-content').forEach(dropdown => {
                     dropdown.classList.remove('show');
                 });
-            });
+            }
         });
 
         // Функция для открытия с переводчиком
@@ -1167,16 +1160,21 @@
         }
         /* --- КОНЕЦ JS ДЛЯ МОДАЛЬНОГО ОКНА --- */
 
-        /* --- JS ДЛЯ БЛОКА ПЛАНОВЫХ ОБЪЯВЛЕНИЙ В ШАПКЕ --- */
-        // Переменная для планового (не срочного) объявления. 
-        const nonUrgentAnnouncement = "ооо";
+        /* --- JS ДЛЯ БЛОКА ПЛАНОВЫХ И СРОЧНЫХ ОБЪЯВЛЕНИЙ --- */
+        
+        // 1. Плановое объявление (в шапке)
+        const nonUrgentAnnouncement = "ооо"; // Ваш текст планового объявления
+        
+        // 2. Срочное объявление (всплывающее)
+        const announcementText = "Ознакомьтесь с приказом № 211-25 от 27.11.2025 Об утверждении алгоритма назначения МГМ пациентам с подозрением или выявленным диагнозом Тб расположен в разделе Новые документы";  // Ваш текст срочного объявления
 
         document.addEventListener('DOMContentLoaded', () => {
             const announcementBox = document.getElementById('announcement-content');
             const showBtn = document.getElementById('show-announcement-btn');
             
+            // Обработка планового объявления (в шапке)
             if (nonUrgentAnnouncement.trim() !== "") {
-                // Показываем текст (обрезанный CSS-ом)
+                // Показываем текст
                 announcementBox.innerHTML = nonUrgentAnnouncement;
                 
                 // Показываем кнопку и навешиваем событие
@@ -1189,23 +1187,14 @@
                 announcementBox.innerHTML = '<span class="no-announcements">Новых объявлений нет.</span>';
                 showBtn.style.display = 'none'; // Скрываем кнопку
             }
+
+            // Обработка срочного объявления (всплывающего)
+            if (announcementText.trim() !== "") {
+                 // Показываем срочное объявление сразу после загрузки
+                 createModal(announcementText, '⚠️ Срочное объявление');
+            }
         });
-        /* --- КОНЕЦ JS ДЛЯ ПЛАНОВЫХ ОБЪЯВЛЕНИЙ --- */
-
-    </script>
-    <script>
-        // Окно объявлений (Срочное, ВСПЛЫВАЮЩЕЕ) - использует общую функцию createModal
-        const announcementText = "Ознакомьтесь с приказом № 211-25 от 27.11.2025 Об утверждении алгоритма назначения МГМ пациентам с подозрением или выявленным диагнозом Тб расположен в разделе Новые документы";  // Впиши текст объявления сюда
-
-        if (announcementText) {
-             // Показываем срочное объявление сразу после загрузки
-             document.addEventListener('DOMContentLoaded', () => {
-                // Проверяем, что функция createModal уже определена
-                if (typeof createModal === 'function') {
-                    createModal(announcementText, '⚠️ Срочное объявление');
-                }
-             });
-        }
+        /* --- КОНЕЦ JS ДЛЯ ОБЪЯВЛЕНИЙ --- */
     </script>
 </body>
 </html>
