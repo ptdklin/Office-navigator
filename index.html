@@ -141,21 +141,24 @@
         }
         
         .announcements-box {
-            background-color: var(--primary-very-light); /* Очень светлый фон, чтобы не был броским */
-            border: 1px solid var(--border);
-            border-left: 5px solid var(--accent); /* Тонкая полоска акцентного цвета */
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-left: 20px; /* Отступ от текста заголовка */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            max-width: 350px;
-            min-height: 180px; /* Чтобы блок был соразмерен логотипу */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-self: center; /* Выравнивание по центру вертикально относительно лого/текста */
-            flex-shrink: 0; /* Чтобы не сжимался */
-        }
+    background-color: var(--primary-very-light); /* Очень светлый фон, чтобы не был броским */
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent); /* Тонкая полоска акцентного цвета */
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-left: 20px; /* Отступ от текста заголовка */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 350px;
+    /* ИЗМЕНЕНИЯ: Фиксированная высота и прокрутка */
+    height: 180px; 
+    overflow-y: auto; 
+    /* КОНЕЦ ИЗМЕНЕНИЙ */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center удалено, чтобы текст начинался сверху */
+    align-self: center; /* Выравнивание по центру вертикально относительно лого/текста */
+    flex-shrink: 0; /* Чтобы не сжимался */
+}
 
         .announcements-box h3 {
             color: var(--dark-turquoise); 
