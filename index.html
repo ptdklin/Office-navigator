@@ -16,13 +16,13 @@
         
         /* ЦВЕТОВАЯ ПАЛИТРА */
         :root {
-            --primary: #4B0082; /* Глубокий Фиолетовый / Индиго (для "Навигатор врача") */
+            --primary: #4B0082; /* Глубокий Фиолетовый / Индиго (для "Навигатор") */
             --primary-light: #f0f8ff; 
             --primary-dark: #370066; 
             --primary-very-light: #f3f8ff;
             --secondary: #64748b;
             --accent: #00BCD4; /* Яркий Бирюзовый */
-            --dark-turquoise: #009ACD; /* Контрастный сине-бирюзовый для "фтизиатра" */
+            --dark-turquoise: #009ACD; /* Контрастный сине-бирюзовый для "врача-фтизиатра" */
             --success: #10b981;
             --warning: #f59e0b;
             --error: #ef4444;
@@ -108,24 +108,18 @@
             line-height: 1.1;
         }
 
-        /* Стилизация части "Навигатор врача" - СИНИЙ/ФИОЛЕТОВЫЙ */
-        .title-blue {
-            color: var(--primary); /* Deep Violet/Indigo */
+        /* --- ИСПРАВЛЕНИЕ: КОРРЕКТНАЯ СТИЛИЗАЦИЯ ЗАГОЛОВКА --- */
+        /* Стилизация части "Навигатор" - ФИОЛЕТОВЫЙ */
+        .title-navigator { 
+            color: var(--primary); 
         }
 
-        /* Стилизация тире (-) - ГРАДИЕНТ/ПЕРЕХОДНЫЙ ЦВЕТ */
-        .title-hyphen {
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); /* Фиолетовый -> Бирюзовый */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Стилизация части "фтизиатра" - НОВЫЙ КОНТРАСТНЫЙ СИНЕ-БИРЮЗОВЫЙ */
-        .title-turquoise {
+        /* Стилизация части "врача-фтизиатра" - СИНЕ-БИРЮЗОВЫЙ */
+        .title-specialist {
             color: var(--dark-turquoise); 
         }
+        /* --- КОНЕЦ ИСПРАВЛЕНИЯ ЗАГОЛОВКА --- */
+
 
         .page-description {
             color: var(--text-secondary);
@@ -205,47 +199,47 @@
         /* ЦВЕТА БЛОКОВ */
         .card-1 {
             --block-color: #2563eb;
-            --block-color-light: #eff6ff;
+            --block-color-light: #f5f8ff; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-2 {
             --block-color: #dc2626;
-            --block-color-light: #fef2f2;
+            --block-color-light: #fffafa; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-3 {
             --block-color: #B45309;
-            --block-color-light: #fefce8;
+            --block-color-light: #fffff5; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-4 {
             --block-color: #7c3aed;
-            --block-color-light: #faf5ff;
+            --block-color-light: #fcfaff; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-5 {
             --block-color: #059669;
-            --block-color-light: #f0fdf4;
+            --block-color-light: #f8fffb; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-6 {
             --block-color: #ea580c;
-            --block-color-light: #fff7ed;
+            --block-color-light: #fffcf5; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-7 {
             --block-color: #0891b2;
-            --block-color-light: #f0fdff;
+            --block-color-light: #f5feff; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-8 {
             --block-color: #dc2626;
-            --block-color-light: #fef2f2;
+            --block-color-light: #fffafa; /* ЕЩЕ БЛЕДНЕЕ */
         }
 
         .card-9 {
             --block-color: #7c3aed;
-            --block-color-light: #faf5ff;
+            --block-color-light: #fcfaff; /* ЕЩЕ БЛЕДНЕЕ */
         }
         
         .card-1 .card-icon { background: var(--block-color-light); }
@@ -279,7 +273,7 @@
             text-decoration: none;
             color: var(--block-color);
             border: 1px solid transparent;
-            background: var(--block-color-light); /* ИСПРАВЛЕНО: Фон соответствует блоку */
+            background: var(--block-color-light); /* Фон соответствует блоку */
             margin-bottom: 10px;
             flex-direction: column;
             cursor: pointer;
@@ -339,7 +333,7 @@
 
         .dropdown-content {
             display: none;
-            background: var(--block-color-light); /* ИСПРАВЛЕНО: Фон соответствует блоку */
+            background: var(--block-color-light); /* Фон соответствует блоку */
             border-left: 3px solid var(--block-color);
             border-radius: 0 0 12px 12px;
             margin-top: -10px;
@@ -475,7 +469,7 @@
             <div class="header-text-container">
                 <div class="institution-main">ГБУЗ МО МОКПТД</div>
                 <h1 class="page-title">
-                    <span class="title-blue">Навигатор врача</span><span class="title-hyphen">-</span><span class="title-turquoise">фтизиатра</span>
+                    <span class="title-navigator">Навигатор</span> <span class="title-specialist">врача-фтизиатра</span>
                 </h1>
                 <p class="page-description">Система доступа к профессиональным ресурсам (для противотуберкулезных кабинетов)</p>
                 <p class="page-description" style="margin-top: 20px; font-size: 1.8rem; font-weight: 700; color: #dc2626; text-align: left; line-height: 1.3;"></p>
