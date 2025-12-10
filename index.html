@@ -149,10 +149,11 @@
     margin-left: 20px; /* Отступ от текста заголовка */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     max-width: 350px;
-    /* ИЗМЕНЕНИЯ: Фиксированная высота и прокрутка */
+    /* ИСПРАВЛЕНИЯ: Фиксированная высота, прокрутка и плавность */
     height: 180px; 
     overflow-y: auto; 
-    /* КОНЕЦ ИЗМЕНЕНИЙ */
+    -webkit-overflow-scrolling: touch; /* Добавляет инерционную прокрутку */
+    /* КОНЕЦ ИСПРАВЛЕНИЙ */
     display: flex;
     flex-direction: column;
     /* justify-content: center удалено, чтобы текст начинался сверху */
