@@ -149,8 +149,8 @@
             margin-left: 20px; /* Отступ от текста заголовка */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             max-width: 350px;
-            /* ИЗМЕНЕНИЯ: Уменьшена высота до 3х строк и скрыта прокрутка */
-            height: 100px; 
+            /* ИЗМЕНЕНИЯ: Увеличена высота до 130px, чтобы вместить заголовок, 3 строки текста и кнопку */
+            height: 130px; 
             overflow: hidden; 
             display: flex;
             flex-direction: column;
@@ -165,6 +165,7 @@
             margin-bottom: 10px;
             display: flex;
             align-items: center;
+            flex-shrink: 0; /* Не сжимать заголовок */
         }
 
         .announcements-icon {
@@ -184,6 +185,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            flex-grow: 1; /* Разрешить тексту занимать доступное пространство */
         }
         
         /* Стиль для кнопки "Показать" */
@@ -199,7 +201,7 @@
             transition: background-color 0.3s ease;
             margin-top: 10px;
             align-self: flex-start; /* Прижимаем к левому краю */
-            flex-shrink: 0; /* Чтобы кнопка не обрезалась при обрезке текста */
+            flex-shrink: 0; /* Чтобы кнопка не обрезалась */
         }
         
         .show-announcement-btn:hover {
